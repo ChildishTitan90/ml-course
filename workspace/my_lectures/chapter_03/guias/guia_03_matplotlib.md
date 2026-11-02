@@ -135,6 +135,14 @@ Las barras de error de un `barplot` muestran incertidumbre según su configuraci
 
 ## 8. Histograma: valores agrupados en intervalos
 
+![Dispersión, histograma y barras como respuestas a preguntas distintas](../../imagenes/c03_graficos.svg)
+
+En la dispersión, cada punto reúne dos medidas de una observación. En el histograma, los intervalos reúnen valores de una medida. En las barras categóricas, los grupos reúnen registros por su nombre. El eje vertical debe aclarar si se representa conteo, media, total o densidad.
+
+![Elementos de un boxplot con cercas y valores observados](../../imagenes/c03_boxplot.svg)
+
+Con Q1=4, mediana=6 y Q3=8, el IQR es 4 y las cercas son −2 y 14. Los bigotes del ejemplo terminan en 2 y 12 porque esos son los datos más alejados dentro de las cercas. El 18 aparece separado. Esta lectura distingue una regla de representación de una decisión de limpieza.
+
 ```python
 fig, ax = plt.subplots()
 sns.histplot(data=libros, x="paginas", bins=4, ax=ax)

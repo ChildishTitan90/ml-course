@@ -22,6 +22,18 @@ Carpeta de datos: C:\Users\victo\ml-course\data
 ```
 
 ---
+## Mapa visual de la explicación
+
+![Cómo cambian las formas al reducir filas o columnas](../my_lectures/imagenes/c03_numpy_ejes.svg)
+
+El dibujo utiliza una matriz pequeña para que se pueda seguir cada suma. En la cafetería, la tabla original tiene forma **(28,5)**: un día por fila y un producto por columna. Reducir axis=0 produce cinco resultados, uno por producto; reducir axis=1 produce 28, uno por día. El significado de cada eje se conserva al cambiar de ejemplo.
+
+Al reorganizar las ventas como (4,7,5), los ejes pasan a representar **semana, día de la semana y producto**. Sumar el eje 2 elimina productos y deja una tabla (4,7); sumar los ejes 0 y 1 elimina semanas y días y deja cinco totales por producto. Una operación correcta empieza por identificar qué dimensiones queremos conservar.
+
+Los precios tienen un valor por producto. Multiplicar ventas por precios convierte cantidades en dinero; sumar unidades solo cuenta productos vendidos. Por eso “el producto más vendido” y “el que genera más ingresos” pueden ser distintos.
+
+En pandas el índice etiqueta filas, mientras que groupby cambia el nivel del resumen. Las gráficas finales deben indicar si usan ventas, ingresos, conteos o medias. Las explicaciones que siguen conservan los ejercicios originales y desarrollan sus pasos.
+
 ## Parte 1 · La cafetería ☕ (NumPy)
 
 Una cafetería vende 5 productos y ha registrado cuántas unidades vendió de cada uno durante **4 semanas** (28 días, de lunes a domingo). La dueña quiere saber cuánto gana, qué días van mejor y qué producto le conviene más.

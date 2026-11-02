@@ -23,6 +23,22 @@ Arquitecturas mencionadas en un mapa histórico, como redes de cápsulas, ilustr
 
 ## 4.2. IA en los mercados
 
+![Flujo de necesidad, datos, estimación, decisión y seguimiento](../../imagenes/c01_sectores.svg)
+
+**Lectura del diagrama:** predecir una necesidad de riego es un resultado intermedio. El beneficio aparece cuando esa estimación ayuda a decidir y el seguimiento comprueba consumo, producción y errores. Una mejora en la predicción debe conectarse con una mejora medible del proceso.
+
+### Comparación con una referencia concreta
+
+Supongamos una operación didáctica que desperdicia 100 unidades de agua por semana con una regla fija. Un prototipo reduce esa cantidad a 80 bajo condiciones comparables. La reducción relativa es (100−80)/100 = 20 %. Si sus sensores, mantenimiento y cómputo requieren recursos, el balance debe incluirlos. Tampoco sabemos por esa cifra qué sucede en otra estación o cultivo.
+
+Esta comparación tiene cuatro partes: un resultado definido, una referencia, condiciones comparables y un periodo. Sin ellas, “20 % mejor” puede significar precisión del modelo, velocidad de cálculo, ahorro de un recurso o una medida completamente distinta.
+
+### Por qué una sola tasa puede engañar
+
+En una población hipotética con 99 operaciones legítimas y una fraudulenta, un sistema que diga siempre “legítima” logra 99 % de exactitud, pero detecta cero fraudes. El porcentaje global es correcto como cálculo y poco útil para esa necesidad. Importan el tipo de error, su frecuencia y las consecuencias de actuar sobre la alerta.
+
+Del mismo modo, automatizar la extracción de un documento no garantiza que la decisión posterior sea correcta. Una cadena de etapas necesita comprobaciones en los puntos donde una salida se convierte en una acción. Esta forma de leer aplicaciones sirve para energía, finanzas, salud, gobierno y agricultura sin convertir los ejemplos educativos en afirmaciones sobre desempeño actual.
+
 La adopción depende de que una capacidad produzca valor en un proceso concreto. Una predicción útil necesita integrarse con personas, decisiones, costos y seguimiento.
 
 ```mermaid
@@ -123,17 +139,9 @@ El material describe agricultura vertical como ejemplo de integración de sensor
 
 Para cualquier caso identifica problema, entrada, salida, decisión, referencia de comparación, costo de los errores y condiciones de uso. Una tendencia tecnológica se vuelve una propuesta evaluable cuando conecta esas piezas.
 
-## Práctica sin resolver
+## Conexión de las ideas
 
-1. Distingue aplicación, método, herramienta e infraestructura con ejemplos.
-2. ¿Qué comprobarías antes de citar una cifra de mercado de una diapositiva?
-3. Diferencia beneficio ambiental de la aplicación y costo del sistema de IA.
-4. Explica falsos positivos y negativos en una alerta de fraude.
-5. ¿Qué implica realmente incorporar revisión humana en un trámite?
-6. ¿Por qué evaluar en otro hospital o equipo puede aportar información nueva?
-7. Diferencia sensor IoT, regla automática y modelo aprendido en agricultura.
-
-**Estado:** guía lista; evaluación pendiente cuando tú indiques.
+Las cifras históricas de las diapositivas conservan su función de contexto. Para interpretar cualquier caso distingue **capacidad técnica, resultado observado y proyección**. Una proyección depende de supuestos; una medición describe unas condiciones; una decisión de adopción necesita comparar costos y beneficios en el uso previsto.
 
 ## Fuente principal
 

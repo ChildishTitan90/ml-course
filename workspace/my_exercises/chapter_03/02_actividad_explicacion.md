@@ -17,6 +17,18 @@ DATA_DIR = raiz / "data"
 ```
 
 ---
+## Mapa visual de la explicación
+
+![Elementos de un boxplot y la regla de detección IQR](../my_lectures/imagenes/c03_boxplot.svg)
+
+La figura separa caja, bigotes, cercas y puntos exteriores. Un punto exterior es una señal estadística para investigar. No identifica por sí solo un error ni decide si debemos eliminarlo. En viviendas, un valor extremo de ocupación puede proceder de un denominador pequeño, una situación real o un registro incorrecto; la interpretación exige volver al significado de la columna.
+
+Las partes de esta actividad siguen tres decisiones. Primero comprobamos calidad y formato; después investigamos ausencia y estrategias de imputación; finalmente estudiamos extremos y consecuencias de modificarlos. Corregir texto, rellenar un faltante y recortar un extremo producen cambios diferentes.
+
+Si imputamos la mediana, el número de filas permanece y cambia una medición. Si eliminamos filas, cambia la muestra analizada. Si recortamos, mantenemos filas pero reducimos la magnitud de ciertos valores. Una buena comparación antes/después informa qué cambió, cuántos casos afectó y por qué.
+
+Al preparar una evaluación predictiva, medianas, escalas y límites aprendidos corresponden a entrenamiento y se reutilizan en test. Los ejercicios originales de abajo muestran técnicas concretas; esta regla explica cómo trasladarlas a un modelo.
+
 ## Parte A · Empleados 👩‍💼
 
 Recursos Humanos te pasa esta tabla, exportada a mano de varias hojas de cálculo. Ejecuta la celda para crearla.

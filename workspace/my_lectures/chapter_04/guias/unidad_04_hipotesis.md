@@ -67,6 +67,24 @@ flowchart TD
 
 ### A. t de una muestra
 
+![Distribución t con las dos colas extremas de un estadístico de magnitud 2](../../imagenes/c04_inferencia.svg)
+
+**Lee el panel derecho:** la curva representa resultados del estadístico si se cumple H₀ y el modelo de la prueba. Las dos regiones sombreadas reúnen valores de magnitud al menos 2. Ese área conjunta es el p-valor bilateral del ejemplo; no es el área que representa “probabilidad de que H₀ sea falsa”.
+
+### El ejemplo completo, desde la pregunta a la conclusión
+
+Queremos contrastar una media de 60 minutos. Con n=16, media observada 66 y desviación muestral 12, la diferencia estimada es 6 minutos. El error estándar es 12/√16=3 y el estadístico es 6/3=2. Con 15 grados de libertad, el p-valor bilateral es aproximadamente 0.064.
+
+Con α=0.05, no se rechaza H₀. La conclusión describe evidencia insuficiente bajo esa regla, sin afirmar que la diferencia real sea cero. Un intervalo t bilateral del 95 % usa aproximadamente 2.131 como valor crítico y produce 66±2.131×3, es decir, [59.61,72.39]. Incluye 60, en consonancia con la decisión de la prueba correspondiente.
+
+La **estimación del efecto** son 6 minutos; el **p-valor** depende también de la incertidumbre. Con otra muestra, tamaño o variación puede cambiar el p-valor aunque la diferencia estimada sea parecida. Ni 0.049 ni 0.051 convierten de repente una diferencia en grande o pequeña.
+
+### El diseño determina qué comparar
+
+Si medimos antes y después a los mismos equipos, cada pareja produce una diferencia y la prueba estudia esas diferencias. Si comparamos equipos distintos seleccionados independientemente, el diseño es de grupos independientes. Elegir una prueba por el nombre de la columna sin examinar quién fue medido puede ignorar dependencias.
+
+Las pruebas t y ANOVA comparan medias bajo modelos específicos; chi-cuadrada compara conteos. Convertir medidas continuas en categorías solo para usar otra prueba cambia la información y la pregunta.
+
 Cuando σ es desconocida, un estadístico usual es:
 
 $$
@@ -159,18 +177,9 @@ Indica pregunta, diseño, tamaño muestral, prueba, supuestos, estimación del e
 
 **Significativo** es una calificación de una regla estadística; no garantiza una explicación causal ni una decisión útil por sí sola.
 
-## Práctica sin resolver
+## Conexión de las ideas
 
-1. Escribe H₀ y H₁ para un tiempo medio de referencia de 30 minutos.
-2. Explica un p-valor de 0.03 sin atribuir una probabilidad a H₀.
-3. ¿Qué diferencia hay entre no rechazar H₀ y demostrar que es verdadera?
-4. Describe errores tipo I y II con un ejemplo cotidiano.
-5. ¿Cuándo dos muestras deben analizarse como pareadas?
-6. ¿Qué permite concluir un ANOVA significativo y qué no identifica?
-7. Diferencia chi-cuadrada de ajuste e independencia.
-8. ¿Por qué una decisión no debería depender solo de pasar 0.05?
-
-**Estado:** guía lista; evaluación pendiente cuando tú indiques.
+Una conclusión estadística enlaza **pregunta, diseño, supuestos, efecto e incertidumbre**. El umbral α resume una regla previamente definida y no sustituye esa explicación. Rechazar una hipótesis tampoco identifica automáticamente una causa; no rechazarla no demuestra equivalencia. Estas distinciones ayudan a comunicar resultados sin prometer más de lo que la evidencia permite.
 
 ## Fuente principal
 

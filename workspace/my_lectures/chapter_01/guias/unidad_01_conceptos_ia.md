@@ -2,9 +2,9 @@
 
 ## Cómo vamos a trabajar
 
-Esta guía cubre <b>el capítulo 1, unidad 1 completa: subtemas 1.1 al 1.8</b>, siguiendo las diapositivas 5 a 31 del profesor. Las analogías, los ejemplos numéricos y las preguntas de reflexión son material de tutoría.
+Esta guía cubre <b>el capítulo 1, unidad 1 completa: subtemas 1.1 al 1.8</b>, siguiendo las diapositivas 5 a 31 del profesor. Las analogías, los ejemplos numéricos y las aclaraciones son material de tutoría.
 
-Nuestro ritmo será: <b>guía de una unidad → evaluación por el chat → explicación de las dudas → comprobación breve → siguiente unidad</b>. Al terminar las unidades del capítulo 1, continuaremos con el capítulo 2. La guía está preparada; la comprensión de esta unidad está pendiente de evaluación.
+La lectura sigue el temario original y conecta cada concepto con ejemplos explicados e imágenes. Puedes avanzar de una unidad a otra siguiendo los enlaces del índice.
 
 Puedes leerla en tres bloques: fundamentos (1.1 a 1.4), aplicaciones y procedimiento (1.5 y 1.6), y razones y limitaciones (1.7 y 1.8).
 
@@ -30,6 +30,24 @@ La <b>entrada</b> es la información que recibe el sistema. La <b>salida</b> es 
 <b>Matiz sobre las diapositivas:</b> los sistemas de IA sí tienen código. Algunos emplean reglas y mecanismos de razonamiento diseñados por personas; otros aprenden patrones de los datos. Que un sistema use reglas no basta, por sí solo, para decidir si pertenece a la IA.
 
 ## 1.2. Tipos y subconjuntos de inteligencia artificial
+
+![Relación de inclusión entre IA, ML y DL](../../imagenes/c01_ia_mapa.svg)
+
+**Cómo leer la imagen:** empieza por el contenedor exterior. Un sistema de reglas puede estar dentro de IA sin pertenecer a ML. Un árbol de decisión ajusta sus reglas con ejemplos, por eso pertenece a ML. Una red profunda también aprende con datos y, además, pertenece a DL. El tamaño de las cajas expresa inclusión conceptual, no cantidad de aplicaciones ni superioridad.
+
+### Un ejemplo completo, sin saltos de vocabulario
+
+Imagina que queremos estimar cuánto tardará un recorrido al solicitarlo. En el historial, cada **fila** representa un recorrido y cada **columna** una propiedad: distancia, hora de salida y duración real. Para aprender usamos las dos primeras como entradas y la duración como objetivo.
+
+1. **Definir la tarea:** estimar minutos, por tanto es regresión supervisada.
+2. **Formar ejemplos:** una entrada podría ser distancia de 3 km y salida a las 8:00; su respuesta conocida podría ser 15 minutos.
+3. **Entrenar:** el algoritmo busca una relación entre entradas y respuestas dentro del conjunto de entrenamiento.
+4. **Predecir:** para otro recorrido de 3 km a las 8:00 produce una estimación, que no tiene por qué coincidir exactamente con 15.
+5. **Evaluar:** al conocer la duración real del recorrido reservado, calculamos el error. Si predijo 13 y duró 15, el error absoluto fue de 2 minutos.
+
+El algoritmo es el procedimiento que aprende; el modelo es la relación ajustada; la predicción es una salida particular. Esta distinción evita decir que “el algoritmo es 13 minutos” o que “predecir significa volver a entrenar”.
+
+**Por qué importa la disponibilidad de datos:** la hora de llegada real todavía no existe cuando solicitamos el recorrido. Incluirla entre las entradas revelaría parte de la respuesta y produciría una evaluación engañosa. Esta misma idea reaparece en el preprocesamiento del capítulo 3 y en la validación del capítulo 5.
 
 <i>Diapositiva 8.</i>
 
@@ -293,11 +311,9 @@ Podemos investigar si hacen falta mejores características, un modelo con capaci
 
 Son señales para investigar, no diagnósticos definitivos basados únicamente en dos porcentajes. La [explicación de Google sobre sobreajuste y subajuste](https://developers.google.com/machine-learning/crash-course/overfitting/overfitting) desarrolla esta comparación.
 
-### La pregunta de arranque que conservamos
+### Un ejemplo de representatividad
 
-Supón que enseñamos a un sistema únicamente fotografías de gatos blancos y después le mostramos un gato negro. ¿Qué dificultad podría tener y qué cambiarías en los ejemplos para ayudarle?
-
-<b>Estado:</b> sin respuesta registrada. Podemos retomarla durante la evaluación.
+Entrenar solo con fotografías de gatos blancos deja sin cubrir otros colores y condiciones. El modelo podría usar señales accidentales, como el color o el fondo. La diversidad de ejemplos y la evaluación con imágenes nuevas ayudan a investigar este problema.
 
 ## Vocabulario para repasar
 
@@ -311,14 +327,11 @@ Supón que enseñamos a un sistema únicamente fotografías de gatos blancos y d
 - <b>Generalización:</b> desempeño con casos nuevos pertinentes para el uso.
 - <b>Regularización:</b> restricciones o penalizaciones que ayudan a controlar el ajuste.
 
-## Evaluación y siguiente paso
+## Conexión de las ideas
 
-La evaluación se realiza <b>en el chat</b>, con preguntas de explicación y aplicación, sin respuestas anticipadas. Revisaremos cada respuesta, explicaremos las confusiones y usaremos otra pregunta breve para comprobar las correcciones.
+Una muestra formada solo por gatos blancos puede enseñar una asociación poco útil entre blancura y “gato”. Para mejorar la representación del problema conviene incluir variación de colores, fondos y condiciones que realmente aparecerán al usar el modelo, con etiquetas fiables y evaluación en imágenes reservadas. Añadir muchas copias de los mismos gatos blancos no cubre esa diversidad.
 
-- [x] Guía de los ocho subtemas preparada.
-- [ ] Responder la evaluación en el chat.
-- [ ] Revisar dudas y comprobar lo reforzado.
-- [ ] Pasar al capítulo 1, unidad 2: Aplicaciones de la inteligencia artificial.
+La secuencia conceptual es **tarea → ejemplos pertinentes → aprendizaje → predicciones → evaluación en casos nuevos**. Cada etapa puede fallar aunque las demás se ejecuten correctamente. La siguiente unidad utiliza esta secuencia para comparar aplicaciones.
 
 ## Fuentes
 

@@ -1,10 +1,10 @@
 # Guías de los capítulos 2, 3 y 4
 
-Hay 12 guías, organizadas por las unidades de las presentaciones del curso. Cada una contiene conceptos, ejemplos propios, práctica sin resolver y fuentes. Su preparación no indica que las unidades hayan sido evaluadas.
+Estas 12 guías conservan las unidades de las presentaciones y contienen conceptos explicados, ejemplos desarrollados, diagramas y fuentes.
 
-## Método y evaluación pendiente
+## Formato de lectura
 
-La evaluación actual sigue siendo la del capítulo 1, unidad 1: [guía en Notion](https://app.notion.com/p/40581a767e17812ba807ce351c8a4935). Cuando envíes las respuestas en el chat, las revisaremos, explicaremos los errores y tú indicarás cuándo avanzar. No hay evaluaciones calificadas todavía.
+Las guías conservan el orden del temario y explican cada concepto con ejemplos, diagramas e interpretación paso a paso. Los cierres desarrollan conexiones entre ideas, sin ejercicios nuevos de autoevaluación. Los ejemplos de código se leen en orden, con sus imports al principio.
 
 ## Capítulo 2: Matemáticas para Ciencia de Datos
 

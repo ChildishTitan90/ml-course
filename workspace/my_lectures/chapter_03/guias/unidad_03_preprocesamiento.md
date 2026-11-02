@@ -2,7 +2,7 @@
 
 ## Objetivo y ruta
 
-Sabrás diagnosticar calidad, tratar faltantes y duplicados y preparar características con una justificación. Sigue 3.1–3.5. Antes de transformar un dataset real te haré preguntas sobre su significado y sobre el problema que buscamos resolver.
+Sabrás diagnosticar calidad, tratar faltantes y duplicados y preparar características con una justificación. Sigue 3.1–3.5. Los ejemplos explican el significado de las columnas y la razón de cada tratamiento antes de aplicarlo.
 
 ## 3.1. Preprocesamiento de datos
 
@@ -140,6 +140,26 @@ Son señales para investigar, no una orden de borrar. Un extremo puede ser un ev
 
 ### Preparar entrenamiento y datos nuevos de manera consistente
 
+![Separación, ajuste en train y aplicación consistente sin fuga](../../imagenes/c03_preprocesamiento.svg)
+
+**Lectura del diagrama:** la división ocurre antes de aprender estadísticas. La mediana, la media, la desviación y las categorías se obtienen dentro del entrenamiento. Los demás conjuntos reciben esas mismas reglas. En validación cruzada, esta separación se repite para cada fold y el preprocesamiento debe quedar dentro del Pipeline evaluado.
+
+### Una referencia numérica que no cambia al llegar el test
+
+Supongamos que train contiene [10,20,30]. Su media es 20 y su desviación con ddof=0 es √(200/3)≈8.165. Un valor nuevo 40 se convierte en (40−20)/8.165≈2.449. El 40 no debería participar en el cálculo de la media que evalúa su propio tratamiento.
+
+El test puede quedar con media distinta de cero. Eso conserva diferencias reales entre conjuntos. Ajustar otro escalador al test cambiaría la representación respecto de la que aprendió el modelo y aprovecharía datos reservados.
+
+### Separar tres decisiones distintas
+
+![One-hot para categorías nominales y códigos ordenados para categorías ordinales](../../imagenes/c03_codificacion.svg)
+
+- **Imputar** decide cómo representar un dato ausente. Un cero real y un valor desconocido significan cosas diferentes.
+- **Codificar** convierte categorías a entradas utilizables. One-hot no crea una jerarquía entre norte, sur y este.
+- **Escalar** hace comparables magnitudes. Un valor estandarizado negativo puede proceder de una distancia positiva que está por debajo de la media.
+
+Pipeline encadena etapas sobre una misma rama; ColumnTransformer asigna ramas a grupos de columnas. En una rama numérica suele tener sentido imputar y después escalar. En una nominal, imputar según una política y después codificar. El objetivo y se mantiene fuera de las entradas.
+
 ```python
 train = pd.DataFrame({
     "distance": [2., 4., np.nan, 8.],
@@ -166,17 +186,9 @@ print(train_ready.shape, new_ready.shape)  # (4, 3) y (1, 3)
 
 **fit** aprende referencias; **transform** las reutiliza. Con handle_unknown="ignore", la categoría nueva no se vuelve una categoría conocida: sus indicadores quedan en cero. El ejemplo prepara entradas, sin entrenar ni evaluar un predictor.
 
-## Práctica para el chat
+## Conexión de las ideas
 
-1. ¿Qué investigarías antes de reemplazar un nulo por cero?
-2. ¿Por qué un número guardado como entero puede ser una categoría?
-3. Explica qué hace dropna(thresh=3).
-4. ¿Cuándo dos registros del mismo cliente no son duplicados?
-5. ¿Cuándo usarías one-hot y cuándo un orden explícito?
-6. ¿Qué aprende fit y por qué no debe aprenderlo del test?
-7. ¿Por qué un extremo de un boxplot no debe borrarse automáticamente?
-
-**Estado:** lista para estudiar; decisiones y respuestas se revisarán cuando tú indiques.
+Preprocesar requiere una justificación por columna y una regla consistente entre entrenamiento y uso. Una tabla sin nulos puede seguir siendo inadecuada si contiene unidades mezcladas, fugas del objetivo o categorías mal representadas. Los cambios deben mejorar la representación del problema y poder repetirse sobre un caso nuevo.
 
 ## Fuentes
 

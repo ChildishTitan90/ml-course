@@ -52,6 +52,24 @@ La curtosis de una normal es 3; su **exceso de curtosis** es 0. Las herramientas
 
 ## 3.2. Teorema del límite central
 
+![Valores individuales asimétricos y distribución de medias aproximadamente normal](../../imagenes/c04_tlc.svg)
+
+**Lectura del experimento dibujado:** el panel izquierdo contiene valores individuales. Para construir el derecho se simulan muchas muestras de tamaño 40 y se guarda una media por muestra. Una barra del segundo panel reúne **medias**, no observaciones originales. Cambiar el objeto que representamos es el centro del TLC.
+
+### Desviación y error estándar con un ejemplo
+
+Supongamos una población con media 50 y desviación 12. Las observaciones individuales tienen esa dispersión. Una media de 36 observaciones independientes tiene error estándar 12/√36=2. Si repetimos el muestreo, las medias varían menos que las observaciones individuales porque promedian parte de su variación.
+
+Con 144 observaciones, el error estándar es 12/√144=1. Se multiplicó el tamaño por cuatro para dividir el error estándar entre dos. El beneficio sigue una raíz cuadrada, no una relación lineal. La media poblacional no cambió de 50 a otro número porque aumentamos n; cambió la precisión del estimador.
+
+### Construir y leer el intervalo
+
+Con media observada 50, σ conocida igual a 12 y n=36, un intervalo bilateral normal del 95 % usa el cuantil 1.96. El margen es 1.96×2=3.92 y los extremos son 46.08 y 53.92. No son el mínimo y máximo de los datos: delimitan un intervalo para la media poblacional bajo el modelo considerado.
+
+![Intervalos obtenidos de distintas muestras y referencia de una prueba t](../../imagenes/c04_inferencia.svg)
+
+En el panel izquierdo la línea vertical es un parámetro fijo. Cada fila representa otra muestra y otro intervalo. El nivel de confianza describe la cobertura del procedimiento en repeticiones; no la proporción de datos dentro de una fila ni una garantía sobre cada intervalo particular. El dibujo contiene pocas repeticiones ilustrativas y no pretende mostrar exactamente 95 % de cobertura.
+
 Distingue tres objetos:
 
 1. La distribución de valores individuales en la población.
@@ -147,18 +165,9 @@ Con los mismos datos y método, pedir mayor confianza amplía el intervalo. Más
 
 Confundir parámetro con estadístico; usar el TLC para declarar normales los datos originales; confundir s con s/√n; interpretar confianza como porcentaje de datos dentro del intervalo; y creer que aumentar n repara cualquier muestra sesgada.
 
-## Práctica sin resolver
+## Conexión de las ideas
 
-1. Identifica población, muestra, parámetro y estadístico en una encuesta de tu universidad.
-2. ¿Cuándo investigarías la mediana además de la media?
-3. Explica la diferencia entre varianza y desviación estándar.
-4. ¿Qué distribución se aproxima a una normal en el TLC?
-5. Si cuadruplicamos n, ¿qué pasa con el error estándar bajo los mismos supuestos?
-6. Explica un intervalo del 95 % sin asignar una probabilidad al parámetro fijo.
-7. ¿Qué cambiaría al pasar del 95 % al 99 % de confianza?
-8. ¿Qué información necesitas para elegir entre un intervalo z y uno t?
-
-**Estado:** guía lista; evaluación pendiente.
+Describir una muestra, estimar un parámetro y estudiar cómo varía un estimador son niveles diferentes. La desviación resume observaciones; el error estándar resume el estimador; el intervalo combina una estimación con su incertidumbre. Una muestra grande reduce variación muestral bajo condiciones apropiadas, pero no corrige automáticamente el sesgo de selección.
 
 ## Fuente principal
 

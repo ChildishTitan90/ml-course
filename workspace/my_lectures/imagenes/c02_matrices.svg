@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="972pt" height="432pt" viewBox="0 0 972 432" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-31T21:42:15.159350</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 432 
+L 972 432 
+L 972 0 
+L 0 0 
+z
+" style="fill: #f5f8fc"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 96.98616 275.14944 
+L 341.28864 275.14944 
+Q 358.49304 275.14944 358.49304 269.44704 
+L 358.49304 165.66336 
+Q 358.49304 159.96096 341.28864 159.96096 
+L 96.98616 159.96096 
+Q 79.78176 159.96096 79.78176 165.66336 
+L 79.78176 269.44704 
+Q 79.78176 275.14944 96.98616 275.14944 
+z
+" clip-path="url(#pcfac3c4d91)" style="fill: #deedfc; stroke: #b8cadb; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 423.86976 275.14944 
+L 582.15024 275.14944 
+Q 599.35464 275.14944 599.35464 269.44704 
+L 599.35464 165.66336 
+Q 599.35464 159.96096 582.15024 159.96096 
+L 423.86976 159.96096 
+Q 406.66536 159.96096 406.66536 165.66336 
+L 406.66536 269.44704 
+Q 406.66536 275.14944 423.86976 275.14944 
+z
+" clip-path="url(#pcfac3c4d91)" style="fill: #d9f1e9; stroke: #b8cadb; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 673.33356 275.14944 
+L 909.03384 275.14944 
+Q 926.23824 275.14944 926.23824 269.44704 
+L 926.23824 165.66336 
+Q 926.23824 159.96096 909.03384 159.96096 
+L 673.33356 159.96096 
+Q 656.12916 159.96096 656.12916 165.66336 
+L 656.12916 269.44704 
+Q 656.12916 275.14944 673.33356 275.14944 
+z
+" clip-path="url(#pcfac3c4d91)" style="fill: #fff0d5; stroke: #b8cadb; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17334e" x="219.1374" y="197.356434" transform="rotate(-0 219.1374 197.356434)">X · forma (3, 2)</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17334e" x="219.1374" y="240.175064" transform="rotate(-0 219.1374 240.175064)">[1, 2]   [3, 4]   [5, 6]</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17334e" x="503.01" y="197.356434" transform="rotate(-0 503.01 197.356434)">w · forma (2,)</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17334e" x="503.01" y="240.175064" transform="rotate(-0 503.01 240.175064)">[10, 1]</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17334e" x="791.1837" y="197.356434" transform="rotate(-0 791.1837 197.356434)">X @ w · forma (3,)</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17334e" x="791.1837" y="240.175064" transform="rotate(-0 791.1837 240.175064)">[12, 34, 56]</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 358.77299 214.704 
+Q 382.578599 214.704 404.148141 214.704 
+" style="fill: none; stroke: #587086; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 399.348141 212.304 
+L 404.148141 214.704 
+L 399.348141 217.104 
+" style="fill: none; stroke: #587086; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17334e" x="382.5792" y="201.8736" transform="rotate(-0 382.5792 201.8736)">@</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 599.637215 214.704 
+Q 627.743237 214.704 653.613192 214.704 
+" style="fill: none; stroke: #587086; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 648.813192 212.304 
+L 653.613192 214.704 
+L 648.813192 217.104 
+" style="fill: none; stroke: #587086; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17334e" x="627.7419" y="201.8736" transform="rotate(-0 627.7419 201.8736)">=</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17334e" x="503.01" y="337.3056" transform="rotate(-0 503.01 337.3056)">Primera fila: 1×10 + 2×1 = 12. Se repite una vez por observación.</text>
+   </g>
+  </g>
+  <g id="text_10">
+   <text style="font-weight: 700; font-size: 22px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #17334e" x="58.32" y="25.356562" transform="rotate(-0 58.32 25.356562)">Producto matricial: una suma ponderada por fila</text>
+  </g>
+  <g id="text_11">
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #17334e" x="58.32" y="45.36" transform="rotate(-0 58.32 45.36)">Las dimensiones interiores coinciden; las exteriores dan la forma del resultado.</text>
+  </g>
+  <g id="text_12">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #587086" x="58.32" y="416.88" transform="rotate(-0 58.32 416.88)">ML · Guías visuales | Ejemplo didáctico original</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pcfac3c4d91">
+   <rect x="72.9" y="86.4" width="860.22" height="285.12"/>
+  </clipPath>
+ </defs>
+</svg>

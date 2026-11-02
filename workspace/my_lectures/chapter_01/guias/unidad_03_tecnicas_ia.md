@@ -56,6 +56,22 @@ El **dominio operativo** especifica condiciones como entorno, vías y otras limi
 
 ## 3.4. Aprendizaje por refuerzo
 
+![Intercambio de acciones, observaciones y recompensa entre agente y entorno](../../imagenes/c01_refuerzo.svg)
+
+**Cómo seguir las flechas:** el agente toma una acción; el entorno cambia; el agente recibe información del nuevo estado y una recompensa. La siguiente decisión depende de la experiencia acumulada. Esta vuelta distingue una secuencia de decisiones de una clasificación aislada.
+
+### El papel de cada componente en un robot
+
+El **agente** es el sistema que decide; el **entorno** es el espacio con obstáculos y una meta; la **observación** puede contener distancias a obstáculos; las **acciones** pueden ser avanzar o girar. La **política** relaciona esas observaciones con decisiones. La **recompensa** proporciona una señal numérica, como valorar llegar a la meta y penalizar choques.
+
+Si premiamos únicamente avanzar una cierta distancia, el robot podría moverse sin acercarse a la meta. La recompensa es una definición operativa de lo que valoramos y puede estar mal alineada con la intención. Además, elegir un movimiento modifica las observaciones futuras: no estamos evaluando filas independientes de una tabla.
+
+**Explorar** significa probar acciones para obtener información; **explotar** significa preferir las que ya parecen convenientes. Una política puede necesitar aceptar un resultado inmediato menor si abre la posibilidad de obtener más recompensa posteriormente. El factor de descuento del ejemplo controla cuánto pesa ese futuro; no representa la probabilidad de acertar una etiqueta.
+
+### Ubicar GAN y XAI sin mezclarlas
+
+En una GAN el discriminador aporta al generador una señal para mejorar los ejemplos producidos. En XAI buscamos entender el comportamiento o una salida de un sistema. Una explicación **local** se refiere a un caso; una **global**, a tendencias generales del modelo. Ninguna de esas dos explicaciones demuestra por sí sola causalidad ni ausencia de errores.
+
 En refuerzo, un **agente** elige acciones en un **entorno**, observa consecuencias y recibe una **recompensa**. Busca aprender una política: una regla para decidir qué hacer según la situación.
 
 ```mermaid
@@ -116,18 +132,9 @@ Son datos producidos mediante simulación o generación, en vez de observaciones
 
 Su utilidad depende de que preserven información pertinente para la tarea. También pueden reproducir sesgos o detalles sensibles del entrenamiento. **Sintético no implica automáticamente anónimo.** Hay que evaluar utilidad, similitud con datos reales y riesgo de exposición.
 
-## Práctica sin resolver
+## Conexión de las ideas
 
-1. Diferencia entrenamiento en nube e inferencia en borde.
-2. ¿Por qué una exactitud global podría ocultar errores importantes?
-3. ¿Qué distingue principalmente los niveles 2 y 3 de automatización?
-4. Identifica agente, entorno, acción y recompensa en un ejemplo propio.
-5. ¿Cómo puede una recompensa mal diseñada alejar al agente del objetivo?
-6. ¿Qué comprobarías si un asistente afirma haber realizado una acción?
-7. Distingue el propósito de GAN, XAI y datos sintéticos.
-8. ¿Por qué una explicación plausible o un dato sintético todavía necesitan evaluación?
-
-**Estado:** guía preparada; evaluación pendiente después de la unidad anterior y cuando tú indiques.
+La IA en el borde describe **dónde se procesa**; el refuerzo describe **cómo se aprende a decidir**; una GAN describe una **forma de entrenamiento generativo**; XAI aborda la **explicación**; los datos sintéticos describen el **origen de ciertos datos**. Son ejes diferentes y pueden combinarse en un mismo proyecto. Conviene nombrar el papel concreto de cada uno.
 
 ## Fuente principal
 

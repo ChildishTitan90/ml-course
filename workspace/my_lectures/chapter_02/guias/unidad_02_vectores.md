@@ -31,6 +31,24 @@ Conserva las unidades y el orden al construir los vectores.
 
 ## 2.2. Norma de un vector
 
+![Norma euclidiana y dos vectores perpendiculares](../../imagenes/c02_vectores.svg)
+
+**Lectura del panel izquierdo:** el vector (3,4) desplaza 3 unidades en una dirección y 4 en la otra. Los dos desplazamientos forman catetos perpendiculares y la flecha mide 5. La norma mide la flecha completa; no suma simplemente 3+4. El panel derecho muestra direcciones cuyo producto interno se anula.
+
+### Cálculo completo y significado de normalizar
+
+Para v = (−6,8), la norma L1 es |−6|+|8|=14; la L2 es √(36+64)=10; la L∞ es max(6,8)=8. Son tres reglas distintas para resumir el mismo vector y no deberían coincidir necesariamente.
+
+Normalizar con la norma L2 divide cada componente entre 10: v/10 = (−0.6,0.8). Su norma es √(0.36+0.64)=1. Conserva dirección y sentido, y cambia longitud. El vector cero no se puede normalizar de esta manera porque dividiríamos entre cero.
+
+### Del producto interno a una predicción
+
+Si x = (3,2) representa distancia en kilómetros y número de paradas, y w = (4,1.5) contiene minutos por kilómetro y minutos por parada, el producto es 4×3 + 1.5×2 = 15 minutos. Añadir un tiempo base b = 2 da 17 minutos. Multiplicar cada característica por su peso y después sumar es una operación con significado, no solo una regla de álgebra.
+
+En una tabla real, el orden de las columnas debe coincidir con el orden de los pesos. Intercambiar las entradas daría otra cuenta aunque ambas fueran números válidos. Además, comparar distancias entre observaciones requiere escalas apropiadas: cambiar kilómetros por metros no debería cambiar arbitrariamente qué recorridos consideramos similares.
+
+**Normal y normalizado:** una normal indica perpendicularidad respecto de una superficie. Normalizar indica cambiar una longitud mediante una regla. Una normal puede medir 10; convertirla en unitaria exige un paso adicional.
+
 Una **norma** mide el tamaño de un vector. La norma euclidiana es:
 
 $$
@@ -118,16 +136,9 @@ Así, n/√5 es una normal unitaria de la recta anterior.
 
 Confundir dimensión con cantidad de filas; comparar magnitudes sin considerar unidades; pensar que un producto interno devuelve un vector; y suponer que toda normal mide 1.
 
-## Práctica sin resolver
+## Conexión de las ideas
 
-1. Representa una observación con tres características y explica el orden y las unidades.
-2. Calcula las normas L1 y L2 de (−6, 8).
-3. Compara ||a|| y ||a − b||: ¿qué mide cada una?
-4. Comprueba si (2, 3) y (3, −2) son ortogonales.
-5. Encuentra una normal de 4x + 2y − 7 = 0 y explica cómo la harías unitaria.
-6. ¿Por qué dos vectores de la misma dirección pueden tener productos internos diferentes con un tercer vector?
-
-**Estado:** guía lista; comprensión y evaluación pendientes.
+El vector representa un caso; la norma mide su tamaño; la norma de una diferencia mide distancia entre casos; el producto interno combina características con pesos o compara direcciones. Una normal describe la orientación de una frontera. Estas piezas reaparecen en KNN, regresión y SVM.
 
 ## Fuente
 

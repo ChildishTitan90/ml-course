@@ -47,6 +47,20 @@ Las diapositivas usan un gráfico histórico de ImageNet para ilustrar avances e
 
 ## 2.3. Visión por computadora y visión artificial
 
+![Clasificación, detección y segmentación sobre una botella dibujada](../../imagenes/c01_vision.svg)
+
+**Lectura guiada:** los tres paneles parten del mismo objeto. En el primero basta una etiqueta para la imagen; en el segundo se necesita además una caja; en el tercero se describe la región píxel por píxel. Una respuesta “botella” correcta no demuestra que el sistema sepa dónde está ni cuál es su contorno.
+
+### De la necesidad a la salida correcta
+
+En una fábrica podemos necesitar contar envases que pasan por una banda. Clasificar cada fotograma como “hay envases” deja sin resolver cuántos hay. La detección aporta ubicaciones; el seguimiento ayuda a reconocer que un envase que aparece en varios fotogramas sigue siendo el mismo, evitando contarlo varias veces. Si buscamos medir una zona dañada de su superficie, una máscara de segmentación permite medir área con más detalle que una caja.
+
+La información de entrenamiento cambia con la tarea: etiquetas para clasificación, cajas para detección y máscaras para segmentación. Obtener anotaciones más detalladas suele requerir más trabajo. Elegir la tarea adecuada desde el principio evita preparar datos que no pueden enseñar la salida necesaria.
+
+**Ejemplo de errores distintos:** la categoría puede ser correcta pero la caja abarcar dos envases; la caja puede ser adecuada pero la máscara incluir el fondo. Por eso conviene evaluar cada salida con medidas que correspondan a su significado. Una exactitud de etiquetas no resume automáticamente calidad de cajas o máscaras.
+
+En audio sucede algo parecido: transcribir palabras, identificar a una persona y decidir una intención son objetivos diferentes aunque compartan una grabación. La unidad de análisis y la respuesta correcta tienen que estar definidas antes de comparar modelos.
+
 La visión por computadora es un campo amplio que obtiene información de imágenes o video. En el material aparecen expresiones cercanas como «visión artificial» y aplicaciones industriales; no necesitas tratarlas como dos cajas completamente separadas.
 
 Distingue las salidas:
@@ -103,17 +117,9 @@ Cada etapa puede fallar. Para analizar un error investiga si el problema estuvo 
 
 La clasificación puede medir aciertos y tipos de error; la transcripción compara palabras; un asistente necesita además comprobar si resolvió correctamente la solicitud. Una respuesta fluida no garantiza que los datos o la acción sean correctos.
 
-## Práctica para cuando revisemos esta unidad
+## Conexión de las ideas
 
-1. Elige una aplicación e identifica entradas, salida y un error importante.
-2. Diferencia clasificación, detección y segmentación con un ejemplo propio.
-3. ¿Por qué cambiar de cámara puede afectar un reconocedor?
-4. ¿Qué demuestra un buen resultado en un benchmark y qué queda por comprobar?
-5. Distingue reconocer palabras e identificar al hablante.
-6. Si un asistente transcribe bien pero ejecuta otra acción, ¿qué etapas investigarías?
-7. Explica por qué un gráfico puede ser útil para IA sin utilizar ML.
-
-**Estado:** guía lista para estudiar; evaluación pendiente. La evaluación actual sigue siendo la de la unidad 1.
+Una aplicación se entiende al enlazar **entrada, salida y criterio de utilidad**. Para un asistente de voz, una transcripción fiel es una etapa; resolver la solicitud exige también interpretar el contexto y comprobar la acción. Para inspección visual, una buena categoría es una etapa; localizar y medir pueden exigir otras salidas. Examinar por separado estas piezas permite localizar el origen de un error.
 
 ## Fuente
 

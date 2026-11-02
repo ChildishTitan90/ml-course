@@ -6,6 +6,24 @@ Distinguirás densidad de probabilidad, interpretarás la normal y la t de Stude
 
 ## 2.1. Densidad de probabilidad continua
 
+![Comparación entre probabilidades discretas y área bajo una densidad](../../imagenes/c04_distribuciones.svg)
+
+**Panel discreto:** cada barra tiene como altura una probabilidad y las alturas suman 1. **Panel continuo:** la probabilidad de un intervalo es el área sombreada. El ancho del intervalo interviene en el cálculo; la altura de la curva por sí sola no es esa probabilidad.
+
+### El ejemplo uniforme explicado por unidades
+
+Si un tiempo X está uniformemente repartido entre 0 y 0.5 segundos, la altura de la densidad debe ser 2 por segundo: 0.5 segundos × 2 por segundo = 1. En [0.1,0.2] el ancho es 0.1 segundos y la probabilidad es 0.1×2=0.2. Una densidad mayor que 1 es compatible con una probabilidad válida porque se multiplica por un ancho.
+
+Para una variable con densidad, un punto exacto tiene ancho cero y probabilidad cero. Eso no significa que la variable no pueda producir una medición cercana: los instrumentos redondean o registran dentro de una precisión. La probabilidad relevante suele ser la de un intervalo.
+
+### Tres lecturas de una tabla conjunta
+
+En la tabla de esta unidad, P(X=1,Y=1)=0.40 es una celda interior. La marginal P(Y=1)=0.60 suma los casos de esa columna. Si sabemos que Y=1, la condicional es P(X=1 dado Y=1)=0.40/0.60≈0.667. La conjunta mira al total; la condicional mira solo a la columna conservada.
+
+### Escalar no cambia una distribución en otra familia
+
+Si una variable presenta una cola larga, restar su media y dividir por su desviación la centra y cambia sus unidades. Los mismos valores siguen ocupando las mismas posiciones relativas. Solo si X era normal podemos afirmar que su versión estandarizada es normal estándar. Esta distinción conecta el capítulo con StandardScaler y con la lectura de histogramas.
+
 Una variable continua se describe mediante una **densidad f(x)**. Las probabilidades corresponden a áreas:
 
 $$
@@ -126,18 +144,9 @@ flowchart LR
     C --> D["Examinar límites, grupos y posibles explicaciones"]
 ```
 
-## Práctica sin resolver
+## Conexión de las ideas
 
-1. ¿Por qué una densidad de altura 2 puede ser válida?
-2. Explica la diferencia entre f(x), F(x) y P(a ≤ X ≤ b).
-3. Si μ = 20 y σ = 4, interpreta el z de x = 12.
-4. ¿Estandarizar una variable garantiza una campana normal?
-5. ¿Por qué al restar normales independientes no se restan las varianzas?
-6. Diferencia una probabilidad conjunta, marginal y condicional.
-7. ¿Qué puedes concluir, y qué no, de una correlación cero?
-8. ¿Por qué la t de Student depende de grados de libertad?
-
-**Estado:** guía lista; evaluación pendiente en el chat.
+Una densidad describe cómo se reparte probabilidad por intervalos; una acumulada suma probabilidad hasta un límite. Una distribución conjunta describe dos variables a la vez. Covarianza y correlación resumen una parte de su relación y deben acompañarse de gráficos y contexto. Una correlación cero no prueba independencia en general.
 
 ## Fuente
 

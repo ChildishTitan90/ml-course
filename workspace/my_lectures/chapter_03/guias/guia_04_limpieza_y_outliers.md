@@ -196,6 +196,14 @@ Por defecto, este transformador devuelve arrays. `strategy` también admite `"me
 
 ## 8. Un valor atípico es un candidato a revisión
 
+![Cercas IQR y posición de un punto exterior](../../imagenes/c03_boxplot.svg)
+
+**Sigue la decisión:** el boxplot señala una observación fuera de una regla estadística. Después investigamos el registro original, la unidad y el instrumento. Una temperatura 210 puede ser un error de captura si el sensor está en una oficina o una lectura válida en un horno. La misma técnica produce una señal; el contexto determina su significado.
+
+Si el error se confirma y conocemos el valor correcto, corregirlo conserva más información que borrar la fila. Si no lo conocemos, marcarlo como ausente hace explícita la incertidumbre. Si el extremo es real, puede ser importante conservarlo o evaluar un método que lo trate mejor.
+
+El recorte cambia valores y la eliminación cambia la muestra. Por eso la comparación antes/después debe incluir cuántas observaciones fueron modificadas y qué grupos resultaron afectados.
+
 Un dato alejado puede ser un error o un valor real. Usa histogramas y boxplots para observar la distribución, y revisa las filas completas para entender los candidatos.
 
 ### Z-score

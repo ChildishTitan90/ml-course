@@ -170,6 +170,16 @@ No hagas `fit` ni `fit_transform` sobre test durante esta evaluación. Ajustar d
 
 ## 8. Escalado: cambiar unidades, no la forma de la distribución
 
+![Distribución original, estandarizada y transformada con log1p](../../imagenes/c03_escalado.svg)
+
+En la imagen, el z-score conserva la cola derecha y cambia sus unidades. El logaritmo comprime más los valores altos y puede cambiar esa forma. No son dos maneras intercambiables de “normalizar”. Ninguno garantiza por sí solo un mejor modelo.
+
+Con train=[10,20,30], StandardScaler aprende media 20 y desviación √(200/3)≈8.165. El valor nuevo 40 se transforma en 2.449 usando esas referencias. Con min-max sobre el mismo train, 40 se convierte en (40−10)/(30−10)=1.5: salir de [0,1] es posible porque ese intervalo corresponde a los extremos de entrenamiento.
+
+![Reglas aprendidas con entrenamiento y reutilizadas en otros conjuntos](../../imagenes/c03_preprocesamiento.svg)
+
+El diagrama conecta las ramas del ColumnTransformer con la evaluación del capítulo 5: el Pipeline completo se ajusta dentro de cada partición de entrenamiento. Ajustar el preprocesador una sola vez antes de validación cruzada puede filtrar información entre folds.
+
 El peso y la distancia tienen escalas diferentes. En métodos basados en distancias, una columna con números grandes puede dominar el cálculo por sus unidades.
 
 El escalado suele ser importante en KNN, SVM, clustering, modelos regularizados y redes neuronales. Los árboles de decisión no suelen necesitarlo. La necesidad exacta depende del modelo y su implementación.
@@ -321,13 +331,8 @@ Antes de entrenar, revisa:
 
 Errores frecuentes: incluir el objetivo entre las entradas, aprender un escalador diferente para test, esperar que test tenga media cero o pensar que one-hot y escalado hacen la misma operación.
 
-## 14. Practicar sin resolver la actividad
+## 14. Lectura completa del flujo
 
-1. Explica qué parámetros aprende un imputador y cuáles aprende un escalador.
-2. Comprueba que la cantidad de filas se conserva después del preprocesamiento.
-3. Explica por qué puede aumentar la cantidad de columnas.
-4. Compara las medias de una columna escalada en train y test sin volver a ajustar.
-5. Describe qué ocurre con la zona `"este"` y qué ocurriría con una prioridad no definida.
-6. Dibuja en papel las ramas del ColumnTransformer y el orden de los pasos de distancia.
+El imputador aprende una mediana por columna numérica; el escalador aprende su centro y escala; el codificador aprende categorías. Cada objeto conserva esas referencias para transformar test y casos nuevos. One-hot puede aumentar columnas sin aumentar filas. Una categoría desconocida puede producir indicadores en cero, según la política configurada; eso no significa que el modelo haya aprendido su efecto.
 
-La idea que conecta toda la clase es conservar una única regla aprendida con entrenamiento y aplicarla de forma consistente a los demás datos.
+La secuencia es **seleccionar entradas disponibles → separar → ajustar preparación y modelo en train → elegir con validación → evaluar en test**. El objetivo y nunca entra en el preprocesador de X. La media transformada de test puede diferir de cero porque no se aprende otra referencia con él.

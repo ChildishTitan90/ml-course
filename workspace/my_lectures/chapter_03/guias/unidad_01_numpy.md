@@ -70,6 +70,30 @@ NumPy compara las dimensiones desde la derecha: son compatibles si son iguales o
 
 ### Agregar y entender axis
 
+![Reducciones de una matriz por axis 0 y axis 1](../../imagenes/c03_numpy_ejes.svg)
+
+**Cómo seguir el dibujo:** con axis=0 se reúnen las entradas que están una encima de otra: 2+8, 4+10 y 6+12. Desaparecen las dos filas y quedan tres resultados. Con axis=1 se reúnen las entradas de cada fila: 2+4+6 y 8+10+12. Desaparecen las tres columnas y quedan dos resultados.
+
+### Leer operación, resultado y forma juntos
+
+| Expresión sobre a | Resultado | Forma |
+| --- | --- | --- |
+| a.sum() | 42 | Escalar |
+| a.sum(axis=0) | [10,14,18] | (3,) |
+| a.sum(axis=1) | [12,30] | (2,) |
+| a[:,1] | [4,10] | (2,) |
+| a[:,1:2] | [[4],[10]] | (2,1) |
+
+Los dos últimos casos seleccionan la misma columna, pero el índice entero elimina un eje y el corte lo conserva. Esta diferencia explica muchos errores al pasar una sola característica a scikit-learn: se espera una tabla de forma (n,1), incluso si contiene una sola columna.
+
+### Broadcasting, alineado desde la derecha
+
+Para sumar una matriz (2,3) y un vector (3,), imagina este último como (1,3). Las columnas coinciden: 3 con 3. Las filas son compatibles: 2 con 1. El vector se usa para cada fila. Un vector (2,) no encaja con (2,3), porque la comparación empieza por las dimensiones finales: 3 y 2 son incompatibles.
+
+Si quieres un ajuste por fila, una columna (2,1) sí se alinea con (2,3). La dimensión 1 se extiende conceptualmente a las tres columnas. No basta con que “haya dos números”: su orientación forma parte de la instrucción.
+
+Una máscara, en cambio, selecciona elementos o filas según verdaderos y falsos. La suma de una máscara cuenta cuántos cumplen; no suma las mediciones originales.
+
 ```python
 print(a.sum())         # 42: suma todos los elementos
 print(a.sum(axis=0))   # [10, 14, 18]: queda un resultado por columna
@@ -133,17 +157,9 @@ flowchart LR
     C --> D
 ```
 
-## Preguntas para razonar
+## Conexión de las ideas
 
-1. Explica shape, ndim y size para un arreglo de forma (4, 3).
-2. ¿Qué cambia al multiplicar una lista o un arreglo por 3?
-3. ¿Qué eje reducirías para obtener la media de cada columna?
-4. ¿Cuándo usarías * y cuándo @?
-5. Escribe la lógica de una selección de la última columna sin ejecutar código.
-6. ¿Por qué una vista puede modificar datos que creías conservar?
-7. ¿Por qué una semilla fija no significa repetir el mismo valor en cada llamada?
-
-**Estado:** guía lista; respuestas pendientes para revisar en el chat.
+La secuencia más útil es **significado de ejes → selección → operación → forma del resultado**. Un promedio global ya eliminó ambos ejes; para promediar una parte, primero selecciona esa parte. Una semilla fija permite reproducir ejemplos, mientras que una copia explícita evita que una modificación afecte datos compartidos cuando utilizas vistas.
 
 ## Fuentes y conexión con tus apuntes
 

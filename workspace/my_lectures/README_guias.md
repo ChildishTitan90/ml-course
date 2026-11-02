@@ -1,10 +1,10 @@
-# Guías de los capítulos 1, 2, 3 y 4
+# Guías de los capítulos 1–5
 
-Las 17 unidades están organizadas por el temario de las presentaciones. Cada guía incluye explicación y práctica para revisar en el chat. Su preparación no significa que se hayan evaluado.
+Las 17 unidades de los capítulos 1–4 siguen el temario de las presentaciones y ahora incluyen explicaciones ampliadas, ejemplos desarrollados y diagramas originales.
 
-## Método y evaluación pendiente
+## Formato de lectura
 
-Seguimos con las ocho preguntas de la unidad 1 del capítulo 1. Cuando envíes tus respuestas, recibirás calificación y explicación de los errores. Tú indicarás cuándo avanzar.
+Las guías conservan el orden del temario y explican cada concepto con ejemplos, diagramas e interpretación paso a paso. Los cierres desarrollan conexiones entre ideas, sin ejercicios nuevos de autoevaluación. Los ejemplos de código se leen en orden, con sus imports al principio.
 
 ## Capítulo 1: Introducción a la Inteligencia Artificial
 
@@ -51,7 +51,21 @@ Seguimos con las ocho preguntas de la unidad 1 del capítulo 1. Cuando envíes t
 
 [Material oficial de Canvas](https://udem.instructure.com/courses/36648/pages/recursos-didacticos-del-capitulo-4-2?module_item_id=5019826).
 
+## Capítulo 5: Aprendizaje Supervisado
+
+[Índice local y siete unidades](chapter_05/README.md) · [Notion](https://app.notion.com/p/40b81a767e1781f88b7eda0939579e98)
+
+1. [Análisis de datos con ML](chapter_05/guias/unidad_01_analisis_con_ml.md).
+2. [Predicción numérica](chapter_05/guias/unidad_02_prediccion_numerica.md).
+3. [Clasificación](chapter_05/guias/unidad_03_clasificacion.md).
+4. [Árboles de decisión](chapter_05/guias/unidad_04_arboles_decision.md).
+5. [K vecinos más cercanos](chapter_05/guias/unidad_05_knn.md).
+6. [Máquinas de vectores de soporte](chapter_05/guias/unidad_06_svm.md).
+7. [Algoritmos de conjunto](chapter_05/guias/unidad_07_algoritmos_conjunto.md).
+
+Se conserva la estructura de las diapositivas y se explica su equivalencia con los seis temas de Canvas. Cada unidad incluye ejemplos ejecutables e interpretación de resultados. Las guías de los cinco capítulos incorporan 30 diagramas originales en SVG y PNG.
+
 ## Copias y fuentes
 
-Las guías anteriores y tus intentos se conservan. Los ejemplos de las guías son de tutoría y las preguntas se dejan sin resolver. Las cifras de tendencias históricas se identifican como tales.
+Las cinco guías prácticas de chapter_03/guias/ y las tres explicaciones de actividades en workspace/my_exercises/ también incorporan apoyos visuales. Los ejemplos añadidos son didácticos; las cifras de tendencias históricas conservan su contexto temporal. Los diagramas SVG y PNG están en imagenes/ y se regeneran con recursos/generar_diagramas.py.
 

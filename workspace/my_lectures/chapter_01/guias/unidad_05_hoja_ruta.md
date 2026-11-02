@@ -12,6 +12,27 @@ La presentación señala que el curso se concentra en fundamentos y práctica de
 
 ### Cómo se conectan los fundamentos
 
+![Conexión entre contexto, matemáticas, datos, estadística y modelos](../../imagenes/c01_ruta.svg)
+
+**Un mismo ejemplo atraviesa el curso:** en el capítulo 1 definimos “estimar la duración de un recorrido al solicitarlo”. En el 2 escribimos una función como ŷ = 4 + 3x. En el 3 organizamos recorridos en filas y preparamos las columnas. En el 4 estudiamos variación y evidencia. En el 5 ajustamos el modelo y comprobamos sus errores con datos reservados.
+
+Los coeficientes 4 y 3 son inventados para explicar la idea. El curso enseña después a aprenderlos y a comprobar cuándo la relación es útil. Así, las matemáticas describen el cálculo, las bibliotecas lo implementan y la evaluación aporta evidencia sobre su desempeño.
+
+### Qué representa cada herramienta en ese recorrido
+
+| Herramienta o concepto | Papel en el ejemplo |
+| --- | --- |
+| Vector | Una entrada con distancia, hora u otras características |
+| Matriz | Las entradas de muchos recorridos juntas |
+| Función | La regla que convierte esas entradas en una estimación |
+| pandas | Organizar, revisar y resumir las observaciones |
+| NumPy | Expresar operaciones sobre los valores numéricos |
+| Estadística | Entender variación, estimación y límites de la evidencia |
+| Modelo supervisado | Aprender una relación a partir de entradas y respuestas |
+| Métrica de error | Resumir diferencias entre duración real y predicha |
+
+Un programa puede ejecutarse sin errores y contestar una pregunta mal definida. Por eso la ruta empieza por el significado y termina en una evaluación conectada con él.
+
 ```mermaid
 flowchart TD
     A["Capítulo 1: preguntas, conceptos y aplicaciones"] --> B["Capítulo 2: lenguaje matemático"]
@@ -44,17 +65,9 @@ Esta tabla combina la hoja de ruta de las diapositivas con el índice de capítu
 
 Los nombres del índice sirven para orientarte. Los detalles y actividades de cada capítulo se revisarán con sus propios materiales.
 
-### Método de estudio acordado
+### Ruta de lectura
 
-1. Lee una guía completa de la unidad que estés estudiando.
-2. Explica las ideas con tus palabras y rehace los ejemplos sin copiarlos.
-3. Anota el símbolo, paso o supuesto donde aparezca una duda.
-4. Responde las preguntas en el chat cuando estés listo.
-5. Recibe calificación y explicación de los errores.
-6. Comprueba lo reforzado con una pregunta breve.
-7. Tú indicas cuándo pasar a la siguiente unidad.
-
-Las guías de los capítulos posteriores están preparadas para tus ratos libres. Eso no cambia la evaluación pendiente: seguimos en la **unidad 1 del capítulo 1**, con las ocho preguntas ya enviadas.
+Lee cada apartado en orden, sigue el diagrama y después recorre el ejemplo explicado. Cuando aparezca un símbolo nuevo, relaciónalo con las entradas, salidas y unidades del ejemplo. Los capítulos 1–4 construyen las bases del capítulo 5; las guías permiten volver a ellas sin depender de una evaluación en el chat.
 
 ### Qué significa avanzar
 
@@ -62,17 +75,11 @@ Avanzar incluye poder explicar entrada, salida, objetivo y límites de un ejempl
 
 En los ejercicios trabajaremos con pistas y revisión de tus intentos. Las copias de archivos del curso y tus notas locales se conservan dentro de **workspace/**.
 
-## Preguntas de cierre
+## Conexión con el capítulo 5
 
-1. ¿Qué aporta cada uno de los capítulos 2, 3 y 4 al estudio de un modelo?
-2. ¿Qué diferencia hay entre conocer una técnica del panorama e implementarla en profundidad?
-3. ¿Qué tema queda como introducción fuera de la cobertura principal detallada?
-4. ¿Cómo comprobarías que entendiste un ejemplo sin limitarte a repetir su código?
-5. ¿Qué harás cuando identifiques una duda antes de pasar de unidad?
-
-**Estado:** guía lista; evaluación pendiente después de las unidades anteriores.
+El siguiente tramo reúne los fundamentos: **datos disponibles al predecir → preparación aprendida con entrenamiento → modelo → predicción → comparación con resultados reales**. Al estudiar cada algoritmo conviene seguir esa misma ruta. Cambia el mecanismo del modelo, pero se mantiene la necesidad de definir entradas, salida y evaluación.
 
 ## Fuente
 
-[Capítulo 1 en Canvas](https://udem.instructure.com/courses/36648/pages/recursos-didacticos-del-capitulo-1-2?module_item_id=5019816), unidad 5, diapositivas 72–73. La tabla de capítulos se apoya también en el índice del curso que compartiste. El método de estudio corresponde a tus instrucciones para la tutoría.
+[Capítulo 1 en Canvas](https://udem.instructure.com/courses/36648/pages/recursos-didacticos-del-capitulo-1-2?module_item_id=5019816), unidad 5, diapositivas 72–73. La tabla de capítulos se apoya también en el índice del curso que compartiste. La ruta de lectura se adapta al estudio detallado del contenido.
 

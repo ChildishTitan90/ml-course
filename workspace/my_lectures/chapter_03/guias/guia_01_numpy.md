@@ -164,6 +164,14 @@ La regla general compara las dimensiones desde la derecha: deben ser iguales o u
 
 ## 8. Agregaciones y axis
 
+![Una matriz y los resultados de reducir cada eje](../../imagenes/c03_numpy_ejes.svg)
+
+**Relaciona el dibujo con mediciones:** en el dibujo hay dos filas y tres columnas; en tu tabla de sensores hay tres días y dos sensores. La regla no cambia: axis=0 elimina la dimensión de días y conserva un resultado por sensor; axis=1 elimina la dimensión de sensores y conserva un resultado por día.
+
+Para mediciones=[[18,22],[20,24],[16,26]], las medias por sensor son [18,24] y las medias por día son [20,22,21]. La media global es 21. Sumar y promediar reducen los mismos ejes, pero responden preguntas diferentes.
+
+Un vector de ajustes [1,−2] tiene un número por sensor. Por broadcasting se reutiliza en cada día y produce [[19,20],[21,22],[17,24]]. No es un ajuste por día: su longitud y orientación se alinean con las columnas.
+
 Una agregación resume varios datos: suma, media, mínimo o máximo.
 
 ```python
@@ -246,16 +254,8 @@ rng = np.random.default_rng(42)
 ejemplo_aleatorio = rng.normal(size=(3, 2))
 ```
 
-## 11. Comprobaciones para trabajar por tu cuenta
+## 11. Lectura guiada del resultado
 
-Antes de escribir una operación, identifica qué representan las filas y columnas. Después anticipa la forma del resultado y compruébala con `.shape`.
+En mediciones[-2:] conservamos los últimos dos días y su forma es (2,2). Con max(axis=0) sobre la tabla completa obtenemos [20,26], un máximo por sensor. Con sum(axis=1) obtenemos [40,44,42], un total por día.
 
-Practica con `mediciones`, sin usar los datos de la actividad:
-
-1. Selecciona los últimos dos días.
-2. Obtén un máximo por sensor y explica qué `axis` elegiste.
-3. Obtén un total por día y anticipa cuántos valores saldrán.
-4. Cuenta las mediciones del primer sensor que superan un límite elegido por ti.
-5. Explica la diferencia entre el número de elementos y la suma de sus valores.
-
-La cantidad de registros y la cantidad medida no son lo mismo: seis registros de temperatura no significan seis grados.
+La tabla contiene seis mediciones, mientras que la suma de sus valores es 126. La cantidad de registros y la cantidad medida son conceptos diferentes; sumar temperaturas tampoco equivale automáticamente a una magnitud útil. Antes de resumir, identifica qué significa la operación para la pregunta estudiada.

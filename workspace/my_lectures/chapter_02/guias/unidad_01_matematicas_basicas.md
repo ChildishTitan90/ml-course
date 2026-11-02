@@ -122,6 +122,27 @@ En NumPy, **np.log(x)** calcula ln(x). **np.log1p(x)** calcula ln(1 + x), cuyo d
 
 ## 1.8. Funciones sigmoides
 
+![Curvas lineal, logarítmica y logística con sus ejes](../../imagenes/c02_funciones.svg)
+
+**Cómo leer los tres paneles:** el eje horizontal contiene las entradas; el vertical, las salidas. La recta cambia a una tasa constante. El logaritmo admite solo entradas positivas y aumenta cada vez más lentamente. La logística admite cualquier entrada real y se aproxima a dos límites. Las formas explican usos diferentes: una recta para una cantidad, un logaritmo para comprimir escalas y una logística para una salida acotada.
+
+### Leer una fórmula por operaciones
+
+Para σ(z) = 1/(1+e⁻ᶻ), calcula desde dentro hacia fuera. Con z = 2: el exponente es −2; e⁻² ≈ 0.1353; el denominador es 1.1353; el resultado es aproximadamente 0.8808. Con z = −2, el exponente pasa a +2 y el resultado es aproximadamente 0.1192. El signo del exponente importa.
+
+| z | −2 | 0 | 2 |
+| --- | ---: | ---: | ---: |
+| e⁻ᶻ, aproximadamente | 7.3891 | 1 | 0.1353 |
+| σ(z), aproximadamente | 0.1192 | 0.5 | 0.8808 |
+
+En clasificación, z puede ser una combinación de características. La función no “sabe” qué representan las clases: esa interpretación depende de cómo construimos y entrenamos el modelo.
+
+### Potencia, exponencial y composición
+
+En x² cambia la base; en 2ˣ cambia el exponente. Para x = 3 dan 9 y 8, respectivamente. Parecerse al escribirlas no las vuelve la misma función. La composición también tiene orden: con f(x)=2x y g(x)=x+3, g(f(4))=11, mientras que f(g(4))=14.
+
+En la representación cíclica del horario, seno y coseno se usan **juntos** porque un solo componente puede asignar el mismo valor a horas diferentes. En dos coordenadas el día forma un círculo: 23:00 queda cerca de 00:00 aunque sus etiquetas numéricas estén en extremos distintos.
+
 «Sigmoide» describe una familia de curvas con forma de S. La **logística** es un ejemplo central:
 
 $$
@@ -162,18 +183,9 @@ Describen fenómenos periódicos, como horas del día. Para un reloj de 24 horas
 
 Confundir x² con 2x; tratar una inversa como recíproco; tomar un logaritmo fuera de su dominio; distribuir el logaritmo sobre una suma; y mezclar grados con radianes. Antes de calcular, identifica entrada, salida, unidades y restricciones.
 
-## Práctica para responder después
+## Conexión de las ideas
 
-1. Resuelve 5x − 4 = 16 y justifica cada paso.
-2. Si aᵢ = i + 1, escribe cuatro términos y su suma.
-3. ¿Por qué la distancia euclidiana no es negativa?
-4. Construye una unión y una intersección distintas a las del ejemplo.
-5. ¿Por qué x² necesita restricciones para tener inversa?
-6. Interpreta log₃(27) y explica el dominio de ln(x).
-7. ¿Qué límites tiene la logística y qué devuelve en cero?
-8. ¿Por qué seno y coseno pueden describir horarios?
-
-**Estado:** lista para estudiar; evaluación pendiente en el chat cuando tú indiques.
+Una fórmula se entiende al identificar **qué cambia, qué permanece fijo, qué valores se permiten y qué significa la salida**. La notación de sumas reaparecerá al calcular errores medios; la distancia, al buscar vecinos; el logaritmo, al transformar datos; y la logística, al construir un clasificador. Revisar esas conexiones evita aprender símbolos como reglas aisladas.
 
 ## Fuente
 

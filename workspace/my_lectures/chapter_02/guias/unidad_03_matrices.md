@@ -65,6 +65,28 @@ En NumPy, para arreglos bidimensionales, A * B multiplica componente a component
 
 ### Por qué aparece en modelos
 
+![Matriz de tres observaciones multiplicada por un vector de dos pesos](../../imagenes/c02_matrices.svg)
+
+**Lectura paso a paso:** X tiene tres filas, que son tres observaciones, y dos columnas, que son dos características. w tiene un peso por característica. Cada fila se combina con los mismos pesos y produce un número. Tres filas generan tres resultados.
+
+| Fila de X | Operación con w = (10,1) | Resultado |
+| --- | --- | ---: |
+| (1,2) | 1×10 + 2×1 | 12 |
+| (3,4) | 3×10 + 4×1 | 34 |
+| (5,6) | 5×10 + 6×1 | 56 |
+
+En NumPy, un vector de forma (2,) no es exactamente una matriz de forma (2,1). Para X de forma (3,2), X @ w devuelve forma (3,). Si w se escribe como columna bidimensional, el resultado tiene forma (3,1). Contienen tres predicciones, pero sus formas pueden afectar operaciones posteriores.
+
+### Por qué transponer no equivale a reorganizar
+
+Transponer convierte cada columna en fila. Cambiar de forma con reshape recorre valores y los vuelve a distribuir. Para [[1,2,3],[4,5,6]], la transpuesta es [[1,4],[2,5],[3,6]], mientras que reshape(3,2) produce [[1,2],[3,4],[5,6]] en el orden habitual. Ambas formas son (3,2), pero las asociaciones entre datos cambiaron.
+
+### Una inversa necesita información recuperable
+
+En el sistema x+y=3 y 2x+2y=6, la segunda ecuación repite la primera. Hay infinitas parejas que cumplen ambas. La matriz de coeficientes es singular: no identifica una solución única. En cambio, x+y=3 y x−y=1 aportan restricciones independientes y determinan x=2, y=1.
+
+La inversa sirve para expresar esa recuperabilidad. En código, resolver Ax=b mediante solve evita construir una matriz inversa que no necesitamos. Si los datos contienen mediciones aproximadas, también importa la estabilidad numérica de la solución.
+
 Si X es n × d y w contiene d pesos, Xw produce una predicción por fila:
 
 ```mermaid
@@ -122,16 +144,9 @@ Si X tiene forma 5 × 2 y W tiene forma 2 × 3, XW tiene forma 5 × 3. El produc
 
 Multiplicar matrices como si fueran números conmutativos; confundir transpuesta con inversa; intentar sumar formas incompatibles; y pensar que una inversa es el recíproco de cada entrada.
 
-## Práctica sin resolver
+## Conexión de las ideas
 
-1. ¿Qué representan filas y columnas en una matriz de datos de 40 estudiantes y 6 mediciones?
-2. Si A es 3 × 4 y B es 4 × 2, ¿qué forma tiene AB? ¿Se puede calcular BA?
-3. Construye una matriz 2 × 2 y su transpuesta.
-4. Calcula el determinante de [[3, 2], [6, 4]] y explica qué implica.
-5. Comprueba la inversa del ejemplo mediante un producto.
-6. Explica la diferencia entre multiplicación componente a componente y producto matricial.
-
-**Estado:** guía lista; evaluación pendiente en el chat.
+Antes de operar, anota las dimensiones y el significado de cada eje. En **(n,d) @ (d,) → (n,)** desaparece la dimensión compartida d y queda una salida por observación. Después comprueba una entrada a mano. Este hábito permite detectar errores de estructura antes de entrenar un modelo.
 
 ## Fuente
 

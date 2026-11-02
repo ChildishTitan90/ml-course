@@ -100,6 +100,24 @@ Si una clave aparece varias veces en ambas tablas, una unión puede multiplicar 
 
 ## 2.4. Estadísticas descriptivas y muestras de datos
 
+![Dividir recorridos por zona, calcular medias y reunir resultados](../../imagenes/c03_pandas.svg)
+
+**Lectura del diagrama:** al principio una fila es un recorrido; al final una fila es una zona. groupby cambia la unidad representada por cada fila. Para norte, las duraciones 9 y 12 dan (9+12)/2=10.5; para sur, 18 y 24 dan 21. El número de filas del resumen no tiene que coincidir con el de la tabla original.
+
+### Conteo, suma y media no se intercambian
+
+Si un grupo tiene duraciones [9,12,ausente], size cuenta 3 filas, count cuenta 2 mediciones y mean calcula 10.5 con las dos presentes. El total observado es 21 minutos, sin afirmar que el valor ausente fuera cero. Al comparar grupos conviene mostrar el tamaño y los faltantes junto al promedio.
+
+### Etiqueta y posición después de filtrar
+
+Supón un índice [10,20,30] y que conservamos las dos últimas filas. La primera posición del resultado es 0, pero su etiqueta sigue siendo 20. iloc[0] accede a esa primera posición y loc[20] a esa etiqueta. reset_index puede cambiar etiquetas, pero no es necesario para entender ni utilizar el resultado.
+
+### Una unión puede cambiar el tamaño de la tabla
+
+Si dos recorridos tienen zona “norte” y la tabla de referencia contiene dos filas para “norte”, cada recorrido coincide con ambas: se generan cuatro filas. No fue una suma ni un muestreo; fue una combinación de coincidencias. validate="many_to_one" exige que la tabla derecha tenga una referencia única por clave y ayuda a detectar ese problema.
+
+También puede haber claves sin coincidencia. En una unión left, el recorrido permanece y los atributos de referencia quedan ausentes. Antes de imputarlos, conviene comprobar que la clave esté bien escrita y que la fuente auxiliar cubra esa zona.
+
 Antes de interpretar una tabla, investiga:
 
 1. ¿Qué significa cada columna y qué representa cada fila?
@@ -130,17 +148,9 @@ Los datos del ejemplo fueron inventados para practicar herramientas. No constitu
 
 Confundir etiquetas con posiciones; crear una columna y olvidar sus unidades; asumir que cualquier unión conserva filas; interpretar códigos como cantidades; y saltar de un resumen a una conclusión sin revisar faltantes y distribución.
 
-## Preguntas para revisar después
+## Conexión de las ideas
 
-1. ¿En qué se diferencian Series y DataFrame?
-2. Si el índice es ["a", "b", "c"], ¿qué selecciona loc y qué selecciona iloc?
-3. Formula una pregunta sobre nulos antes de elegir qué hacer con ellos.
-4. ¿Qué unión conserva todos los registros de tu tabla principal?
-5. ¿Qué podría causar que un merge duplique el número de filas?
-6. ¿Por qué la media sola podría ocultar información?
-7. ¿Qué diferencia hay entre count y size?
-
-**Estado:** guía lista; evaluación pendiente.
+Una exploración fiable conserva el significado de la fila y de los denominadores. Seleccionar reduce el conjunto observado; agrupar cambia su nivel de resumen; unir añade relaciones y puede multiplicar coincidencias. La interpretación del resultado depende de identificar cuál de estas operaciones ocurrió.
 
 ## Fuentes
 

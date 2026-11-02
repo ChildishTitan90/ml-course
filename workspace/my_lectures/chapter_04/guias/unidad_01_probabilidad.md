@@ -71,6 +71,28 @@ La segunda probabilidad cambia porque la primera extracción modifica la bolsa.
 
 ### Bayes y probabilidad total
 
+![Árbol con 10 000 piezas y el cálculo inverso de Bayes](../../imagenes/c04_bayes.svg)
+
+**Sigue primero los conteos:** 60 % de 10 000 son 6 000 piezas de A; 40 % son 4 000 de B. El 2 % de 6 000 son 120 defectos y el 5 % de 4 000 son 200. Se suman **cantidades de piezas defectuosas**, no simplemente 2 %+5 %.
+
+### La misma información responde preguntas distintas
+
+| Lo que ya sabemos | Conjunto de referencia | Cálculo |
+| --- | --- | --- |
+| Se eligió una pieza de la producción completa | 10 000 piezas | P(defecto)=320/10 000=3.2 % |
+| La pieza salió de B | 4 000 piezas de B | P(defecto dado B)=200/4 000=5 % |
+| La pieza es defectuosa | 320 piezas defectuosas | P(B dado defecto)=200/320=62.5 % |
+
+La condición indica qué filas del universo conservamos. “Dado defecto” restringe el análisis a piezas malas; “dado B” lo restringe a piezas de esa máquina. Invertir la condición cambia el denominador y la pregunta.
+
+En este ejemplo la probabilidad total es un promedio **ponderado** de las tasas de defecto: 0.6×0.02 + 0.4×0.05. Un promedio simple de 2 % y 5 % supondría pesos iguales y daría 3.5 %, que no corresponde a esa mezcla de producción.
+
+### Independencia y exclusión mutua
+
+Al lanzar un dado equilibrado, A={sale 1} y B={sale 2} son excluyentes. Saber que salió 2 hace imposible que haya salido 1 en ese lanzamiento, así que no son independientes. En cambio, los resultados de dos lanzamientos independientes pueden ocurrir juntos y el primero no cambia la probabilidad del segundo.
+
+Para eventos de probabilidades positivas, exclusión mutua e independencia no pueden confundirse: si la intersección vale cero y el producto de probabilidades es positivo, la igualdad que define independencia no se cumple.
+
 Bayes permite cambiar el sentido de una condición:
 
 $$
@@ -157,18 +179,9 @@ El coeficiente combina cuántas posiciones pueden ocupar los k éxitos. Para n =
 
 Contar resultados sin comprobar equiprobabilidad; intercambiar P(A | B) con P(B | A); confundir independencia con exclusión; y creer que un promedio tiene que ser un resultado posible individual.
 
-## Práctica para revisar después
+## Conexión de las ideas
 
-1. Define espacio muestral y evento con un ejemplo propio.
-2. ¿Cuándo es válida la razón «favorables/posibles»?
-3. Explica por qué se resta la intersección en la suma.
-4. ¿Qué cambia al condicionar una probabilidad?
-5. Construye un ejemplo donde dos eventos no sean independientes.
-6. ¿Por qué Bayes necesita la proporción de cada grupo?
-7. Diseña una distribución discreta de tres valores y comprueba su suma.
-8. ¿Qué diferencia hay entre X, un valor x y E[X]?
-
-**Estado:** guía preparada; respuestas pendientes.
+La probabilidad depende del experimento y del conjunto de referencia. En una condicional, primero identifica qué información ya se conoce y después cuenta dentro de ese conjunto. La variable aleatoria convierte resultados en números; su distribución asigna probabilidades; la esperanza y la varianza resumen aspectos de esa distribución sin describir necesariamente un resultado individual.
 
 ## Fuente
 

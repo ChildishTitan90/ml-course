@@ -123,6 +123,30 @@ La regla evita olvidar el factor 2. También permite obtener la derivada de ln(3
 
 ## 4.6. Derivadas de orden superior y derivadas parciales
 
+![Tangente de una función y un paso de descenso por gradiente](../../imagenes/c02_derivadas.svg)
+
+**Panel izquierdo:** f(3)=9 es una altura; f′(3)=6 es una pendiente. La recta tangente aproxima la curva cerca de 3, pero no reproduce la curva completa. **Panel derecho:** una derivada permite elegir una dirección de actualización del parámetro.
+
+### Un paso de optimización, con todas sus cantidades
+
+Tomemos una pérdida didáctica L(w)=(w−2)². Su mínimo está en w=2 y su derivada es L′(w)=2(w−2). Si empezamos en w=4, la pérdida es 4 y la derivada también es 4.
+
+Con tasa de aprendizaje η=0.2:
+
+$
+w_{\mathrm{nuevo}}=4-0.2(4)=3.2
+$
+
+La nueva pérdida es (3.2−2)²=1.44. Disminuyó porque el paso nos acercó al mínimo. La derivada no es el error ni el valor final del parámetro: es información local para actualizarlo.
+
+Si η=2, el mismo cálculo lleva a w=−4 y la pérdida sube a 36. Ir en sentido opuesto al gradiente no garantiza una mejora para cualquier tamaño de paso. Un paso demasiado grande puede cruzar el valle y alejarse más.
+
+### Una derivada cero no identifica por sí sola un mínimo
+
+Para f(x)=x³, f′(0)=0; sin embargo, la función sigue aumentando al pasar por cero. Para f(x)=−x², la derivada también se anula en cero y allí hay un máximo. Hace falta estudiar el comportamiento alrededor del punto o usar condiciones adicionales.
+
+En varias variables, una parcial cambia solo una entrada. El gradiente reúne esas tasas. Al ajustar pesos de un modelo, cada componente señala cómo cambia la pérdida ante un pequeño cambio de un peso, manteniendo los demás fijos.
+
 La **segunda derivada** deriva nuevamente la primera. Describe cómo cambia la pendiente. Si f(x) = x³, entonces f′(x) = 3x² y f″(x) = 6x.
 
 En una función de varias entradas, una **derivada parcial** estudia una variable manteniendo las demás constantes.
@@ -169,17 +193,9 @@ En x = 0, σ(0) = 0.5 y σ′(0) = 0.25. Cerca de los extremos de la S la pendie
 
 Usar Δx/Δy cuando buscamos Δy/Δx; confundir f con f′; olvidar la derivada de la función interior; derivar todas las variables en una parcial; y asumir que toda pendiente cero es un mínimo.
 
-## Práctica sin resolver
+## Conexión de las ideas
 
-1. Explica con palabras la diferencia entre valor de función, límite y derivada.
-2. Deriva 4x³ − 2x + 7.
-3. Identifica interior y exterior en (x² + 1)⁴ y aplica la cadena.
-4. Deriva e²ˣ y ln(5x), indicando el dominio de la segunda.
-5. Calcula las dos parciales de F(x, y) = x²y + y².
-6. ¿Qué significa una pendiente negativa en un punto?
-7. Explica por qué la derivada logística es pequeña cuando su salida se aproxima a 0 o 1.
-
-**Estado:** guía lista; práctica y evaluación pendientes en el chat.
+El límite construye la noción de cambio local; las reglas permiten calcularlo; la cadena propaga cambios entre transformaciones; las parciales separan el efecto de cada entrada; y el gradiente reúne esos efectos para orientar actualizaciones. Esa es la conexión con el entrenamiento de modelos, aunque algunos algoritmos, como los árboles, se ajustan con otros procedimientos.
 
 ## Fuente
 

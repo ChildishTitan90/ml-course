@@ -28,6 +28,24 @@ flowchart TD
 
 ## 4.2. Gráficos para resumen de datos continuos
 
+![Ejemplos comparados de dispersión, histograma y barras](../../imagenes/c03_graficos.svg)
+
+**Qué significa una marca en cada panel:** en dispersión, un punto es un recorrido; en el histograma, una barra reúne observaciones de un intervalo; en barras por zona, una barra reúne una categoría. La misma palabra “barra” no implica el mismo significado estadístico.
+
+### Un procedimiento de lectura completo
+
+Primero identifica la unidad de observación y las variables. Después mira sus unidades y la escala. En dispersión, subir significa más duración y desplazarse a la derecha, más distancia. Una tendencia creciente sugiere asociación, pero no demuestra que la distancia sea la única explicación: hora, tráfico o composición de rutas también pueden intervenir.
+
+En un histograma, cambiar bins cambia qué valores se reúnen. Una irregularidad que desaparece al cambiar ligeramente los intervalos puede deberse a la partición y a la poca cantidad de datos. Conviene examinar varias vistas sin escoger únicamente la que favorece una historia.
+
+En barras, especifica el denominador si usas proporciones. Un grupo con 20 incidencias entre 100 casos tiene tasa 20 %, mientras otro con 30 entre 300 tiene 10 %. El segundo tiene más incidencias y menor tasa: ambas afirmaciones son compatibles.
+
+### Leer una caja con sus reglas
+
+![Caja, mediana, bigotes, cercas y un punto exterior](../../imagenes/c03_boxplot.svg)
+
+Con Q1=4 y Q3=8, el IQR es 4 y las cercas son −2 y 14. Si los extremos observados dentro de esas cercas son 2 y 12, allí terminan los bigotes. Un valor 18 se dibuja aparte. El dibujo no declara que 18 sea un error ni que −2 y 14 sean valores observados. Distinguir cercas de bigotes evita una confusión frecuente.
+
 ### Histograma
 
 Agrupa una variable numérica en intervalos y muestra cuántas observaciones caen en cada uno. El número y ancho de los intervalos afectan la apariencia.
@@ -117,17 +135,9 @@ Para guardar, utiliza fig.savefig con una ruta dentro de tu espacio de trabajo. 
 
 Comprueba tipo de variable, unidades, escalas, intervalos, denominadores, tamaños por grupo y significado del color. Describe qué ves, plantea explicaciones posibles y busca más evidencia antes de afirmar una causa.
 
-## Práctica sin resolver
+## Conexión de las ideas
 
-1. Elige un gráfico para estudiar una variable numérica y explica por qué.
-2. ¿Qué cambia al modificar bins en un histograma?
-3. ¿Qué representan la línea central de la caja y los bigotes?
-4. ¿Por qué cero correlación lineal no descarta una relación?
-5. ¿Cómo podría un eje de barras exagerar una diferencia?
-6. ¿Cuándo compararías conteos y cuándo proporciones?
-7. Explica la diferencia entre Figure y Axes.
-
-**Estado:** guía preparada; interpretación y evaluación pendientes.
+Un gráfico útil hace visible el significado de sus marcas, el resumen aplicado y las condiciones de comparación. Figure contiene los paneles; cada Axes controla uno. El código dibuja la representación elegida, pero la pregunta y la interpretación deben venir de quien analiza los datos.
 
 ## Fuentes
 

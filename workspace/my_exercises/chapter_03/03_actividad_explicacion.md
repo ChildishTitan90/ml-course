@@ -25,6 +25,18 @@ DATA_DIR = raiz / "data"
 ```
 
 ---
+## Mapa visual de la explicación
+
+![Aprender transformaciones con train y aplicarlas de forma consistente](../my_lectures/imagenes/c03_preprocesamiento.svg)
+
+**El hilo de la actividad es conservar una misma regla de preparación.** En propinas observamos cómo cambia una representación; en pingüinos aprendemos transformaciones con train; en California combinamos varias ramas. Cada parte prepara el paso siguiente.
+
+Una categoría nominal necesita una representación que no invente orden. Una categoría ordinal necesita un orden explícito. Una medida numérica puede requerir escalado para compararse con otras. Un logaritmo puede modificar una cola larga; un escalado lineal conserva su forma relativa.
+
+Pipeline significa pasos **sucesivos** sobre una rama, como logaritmo y luego escalado. ColumnTransformer significa tratamientos **por grupos de columnas**, como una rama numérica y otra categórica. Las salidas se reúnen conservando la correspondencia entre filas.
+
+fit aprende medianas, medias, escalas o categorías; transform las aplica. Un pingüino nuevo recibe las referencias ya aprendidas y debe producir las mismas columnas. Un test con media transformada distinta de cero puede ser completamente correcto: contiene otros casos. Estas transformaciones preparan entradas; hace falta añadir y entrenar un predictor para obtener una especie o un valor de vivienda.
+
 ## Parte A · Propinas 💵
 
 Usaremos el dataset de propinas: `total_bill` (cuenta), `tip` (propina), `sex`, `smoker`, `day` (`Thur`, `Fri`, `Sat`, `Sun`), `time` (`Lunch`/`Dinner`) y `size` (personas en la mesa). **Queremos predecir la propina** (`tip`).

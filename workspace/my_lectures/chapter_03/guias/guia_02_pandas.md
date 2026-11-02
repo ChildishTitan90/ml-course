@@ -184,6 +184,14 @@ Si quieres experimentar sin modificar una tabla existente, crea antes una copia 
 
 ## 9. Agrupar y resumir
 
+![Proceso de dividir, agregar y combinar grupos](../../imagenes/c03_pandas.svg)
+
+**Traducción al ejemplo de libros:** cada fila inicial representa un libro; cada fila después de agrupar por género representa un género. Las novelas tienen 180,120 y 210 páginas: media 170. Los libros de ciencia tienen 240,300 y 150: media 230. Esos dos resultados no describen dos libros concretos.
+
+En horas_lectura, ciencia tiene tres filas y solo dos valores presentes: size=3, count=2 y media=(8+10)/2=9. El faltante de Huerto no se convirtió en cero ni se añadió al denominador.
+
+Una tabla cruzada por formato y género responde otra pregunta: cuenta combinaciones. Una tabla dinámica con values="paginas" y aggfunc="mean" resume páginas. Revisar la función de agregación permite distinguir dos tablas visualmente parecidas.
+
 `groupby` sigue tres pasos: dividir las filas en grupos, calcular dentro de cada grupo y combinar los resultados.
 
 ```python
@@ -272,4 +280,4 @@ El array conserva el orden de las columnas seleccionadas, pero pierde sus nombre
 - Una diferencia entre grupos no demuestra su causa; también puede cambiar la composición de esos grupos.
 - La media de valores cero y uno es la proporción de unos, si no hay faltantes que cambien el conjunto considerado.
 
-Practica con `libros`: cuenta libros por formato, localiza faltantes, compara páginas medias por género y construye una tabla cruzada. Antes de ejecutar, explica qué representa cada fila de tu resultado.
+En libros hay tres ejemplares en papel y tres digitales. Horas_lectura tiene un faltante; páginas medias por género produce una fila por género y la tabla cruzada cuenta combinaciones de género y formato. Cada resumen cambia la unidad que representa una fila.
